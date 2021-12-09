@@ -1,6 +1,6 @@
-import { css } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 
-export default css`
+const globalCss = (theme: Theme) => css`
   html,
   body,
   div,
@@ -125,4 +125,11 @@ export default css`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  #root {
+    min-height: 100vh;
+    background-color: ${theme.background};
+    color: ${theme.text};
+  }
 `;
+
+export default globalCss;
