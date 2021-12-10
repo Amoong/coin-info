@@ -1,21 +1,19 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { Global, ThemeProvider } from "@emotion/react";
 import ReactDOM from "react-dom";
-
-import { lightTheme, darkTheme } from "styles/themes";
-import globalCss from "styles/globalCss";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import App from "./App";
 
+const queryClient = new QueryClient();
+
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={darkTheme}>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Global styles={globalCss} />
         <App />
       </BrowserRouter>
-    </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root"),
 );

@@ -105,6 +105,10 @@ const globalCss = (theme: Theme) => css`
   }
   body {
     line-height: 1;
+    background-color: ${theme.background};
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.5s ease-in-out;
   }
   ol,
   ul {
@@ -126,9 +130,11 @@ const globalCss = (theme: Theme) => css`
     border-spacing: 0;
   }
   #root {
+    width: 100%;
+    max-width: 500px;
     min-height: 100vh;
-    background-color: ${theme.background};
     color: ${theme.text};
+    transition: color 0.5s ease-in-out;
   }
 `;
 
